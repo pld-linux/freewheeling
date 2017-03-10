@@ -1,0 +1,9 @@
+diff -dur freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153.orig/data/Makefile.am freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153/data/Makefile.am
+--- freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153.orig/data/Makefile.am	2017-02-24 19:47:23.000000000 +0100
++++ freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153/data/Makefile.am	2017-03-10 19:16:00.106740825 +0100
+@@ -3,4 +3,4 @@
+ fweelin_DATA = *.txt *.xml basic.sf2 vera.ttf verabd.ttf gdb-stackdump-cmds
+ 
+ install-data-hook:
+-	sed -ie "s/<freewheeling version=\"_FWEELIN_VERSION_\">/<freewheeling version=\"${VERSION}\">/" $(fweelindir)/fweelin.xml
++	sed -ie "s/<freewheeling version=\"_FWEELIN_VERSION_\">/<freewheeling version=\"${VERSION}\">/" $(DESTDIR)$(fweelindir)/fweelin.xml
