@@ -1,0 +1,31 @@
+diff -dur freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153.orig/data/interfaces.xml freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153/data/interfaces.xml
+--- freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153.orig/data/interfaces.xml	2017-02-24 19:47:23.000000000 +0100
++++ freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153/data/interfaces.xml	2017-03-10 19:39:59.224087433 +0100
+@@ -21,19 +21,25 @@
+   <interface setup="coreinterface.xml" switchable="0"/>
+ 
+   <!-- Customization -->
++  <!--
+   <interface setup="mercury.xml" switchable="0"/>
+   <interface setup="synthedit.xml" switchable="0"/>
+   <interface setup="bcf2000-synthedit.xml" switchable="0"/>
+   <interface setup="rme-hdsp.xml" switchable="0"/>
++  -->
+ 
+   <!-- Bare minimum -->
+   <interface setup="browsers.xml" switchable="0"/>
+ 
+   <!-- Added user interfaces -->
++  <!--
+   <interface setup="midifootswitch.xml" switchable="0"/>
+   <interface setup="bcf2000.xml"/>
+-<!-- <interface setup="pckeyboard.xml"/> -->
++  -->
++  <interface setup="pckeyboard.xml"/>
++  <!--
+   <interface setup="midikeyboard.xml"/>
+-<!-- <interface setup="pcr-m1.xml" switchable="0"/> -->
++  <interface setup="pcr-m1.xml" switchable="0"/>
+   <interface setup="dancemat.xml"/>
++   -->
+ </interfaces>

@@ -11,6 +11,7 @@ Source0:	https://github.com/free-wheeling/freewheeling/archive/%{commit}/%{name}
 # Source0-md5:	ac66a2eecd4992ae0e377458cb529448
 Patch0:		format_string.patch
 Patch1:		destdir.patch
+Patch2:		config.patch
 URL:		https://github.com/free-wheeling/freewheeling/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_gfx-devel
@@ -39,6 +40,7 @@ interface for instrumentalists to capture audio loops in real-time.
 
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
