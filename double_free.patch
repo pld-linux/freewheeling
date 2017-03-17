@@ -1,0 +1,35 @@
+diff -dur freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153.orig/src/fweelin_block.cc freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153/src/fweelin_block.cc
+--- freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153.orig/src/fweelin_block.cc	2017-02-24 19:47:23.000000000 +0100
++++ freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153/src/fweelin_block.cc	2017-03-17 11:14:39.000000000 +0100
+@@ -1000,7 +1000,10 @@
+     BlockExtendedData *curxt = cur->xt;
+     while (curxt != 0) {
+       BlockExtendedData *tmpxt = curxt->next;
+-      delete curxt;
++      if (curxt->GetType() == T_BED_ExtraChannel)
++        ((BED_ExtraChannel *)curxt)->RTDelete();
++      else
++        delete curxt;
+       curxt = tmpxt;
+     }
+ 
+diff -dur freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153.orig/src/fweelin_mem.h freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153/src/fweelin_mem.h
+--- freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153.orig/src/fweelin_mem.h	2017-02-24 19:47:23.000000000 +0100
++++ freewheeling-4a03065f9d2f520cbd37dd560b4cae5685418153/src/fweelin_mem.h	2017-03-17 11:12:46.000000000 +0100
+@@ -132,12 +132,10 @@
+     exit(1);
+   };
+   void operator delete(void *d) {
+-    //printf("ERROR: Preallocated type can not be deleted directly\n");
+-    //exit(1);
+-
+-    // We used to give an error message-
+-    // now we pass this delete on to RTDelete
+-    ((Preallocated *) d)->RTDelete();
++    // cannot pass to RTDelete as this would end with two delete executed
++    // and destructor called twice
++    printf("ERROR: Preallocated type can not be deleted directly\n");
++    exit(1);
+   }
+ 
+   // Realtime-safe function to get a new instance of this class
