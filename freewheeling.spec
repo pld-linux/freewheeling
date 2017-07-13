@@ -35,6 +35,8 @@ interface for instrumentalists to capture audio loops in real-time.
 %patch0 -p1
 
 %build
+export CFLAGS="%{rpmcflags} -I/usr/include/SDL"
+export CXXFLAGS="%{rpmcxxflags} -I/usr/include/SDL"
 %configure \
 	--enable-fluidsynth
 
