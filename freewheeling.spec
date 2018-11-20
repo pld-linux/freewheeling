@@ -1,12 +1,13 @@
 Summary:	Freewheeling Live Looper
 Name:		freewheeling
 Version:	0.6.4
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications
 Source0:	https://github.com/free-wheeling/freewheeling/archive/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	7a76624759929fe819d3a0d0dc8c0bb3
 Patch0:		config.patch
+Patch1:		fluidsynth2.patch
 URL:		https://github.com/free-wheeling/freewheeling/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_gfx-devel
@@ -33,6 +34,7 @@ interface for instrumentalists to capture audio loops in real-time.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 export CFLAGS="%{rpmcflags} -I/usr/include/SDL"
