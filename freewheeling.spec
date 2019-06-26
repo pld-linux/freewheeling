@@ -1,7 +1,7 @@
 Summary:	Freewheeling Live Looper
 Name:		freewheeling
 Version:	0.6.4
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications
 Source0:	https://github.com/free-wheeling/freewheeling/archive/v%{version}/%{name}-%{version}.tar.gz
