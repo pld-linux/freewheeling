@@ -3,7 +3,7 @@ Summary:	Freewheeling Live Looper
 Summary(pl.UTF-8):	Freewheeling - narzędzie do nagrywania pętli dźwiękowych w czasie rzeczywistym
 Name:		freewheeling
 Version:	0.6.6
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/Sound
 #Source0Download: https://github.com/free-wheeling/freewheeling/releases
