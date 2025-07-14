@@ -41,7 +41,7 @@ pętli dźwiękowych w czasie rzeczywistym.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %configure \
